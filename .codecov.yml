@@ -1,0 +1,18 @@
+---
+coverage:
+  status:
+    project:
+      default:
+        enabled: true
+        target: "99%"
+        if_not_found: success
+        if_ci_failed: error
+    patch:
+      default:
+        enabled: true
+        target: "99%"
+        set_pending: yes
+        if_not_found: success
+        if_ci_failed: error
+ignore:
+  - "src/__tests__/" # ignore the tests
