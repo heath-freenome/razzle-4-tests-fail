@@ -1,0 +1,16 @@
+{
+  "automock": false,
+  "setupFiles": ["<rootDir>/src/__tests__/__setup__/initJest.js"],
+  "testMatch": ["**/?(*.)+(test).[jt]s?(x)"],
+  "setupFilesAfterEnv": ["<rootDir>/node_modules/jest-enzyme/lib/index.js"],
+  "modulePathIgnorePatterns": ["<rootDir>[/\\\\](build|docs|node_modules|scripts)[/\\\\]"],
+  "testEnvironment": "jest-environment-jsdom-global",
+  "transform": {
+    "src/client.jsx": "<rootDir>/src/__tests__/__setup__/hotModulesPreprocessor.js",
+    "src/index.jsx": "<rootDir>/src/__tests__/__setup__/hotModulesPreprocessor.js",
+    "\\.jsx?$": "babel-jest"
+  },
+  "coverageDirectory": "<rootDir>/coverage/",
+  "collectCoverage": true,
+  "coveragePathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/src/__tests__"]
+}
