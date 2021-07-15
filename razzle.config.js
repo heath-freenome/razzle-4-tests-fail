@@ -52,7 +52,7 @@ module.exports = {
       transform: {
         'src/client.jsx': '<rootDir>/src/__tests__/__setup__/hotModulesPreprocessor.js',
         'src/index.jsx': '<rootDir>/src/__tests__/__setup__/hotModulesPreprocessor.js',
-        '\\.[jt]sx?$': 'babel-jest',
+        ...jestConfig.transform,
       },
       coverageDirectory: '<rootDir>/coverage/',
       collectCoverage: true,
@@ -60,7 +60,8 @@ module.exports = {
     };
     const newJestConfig = { ...jestConfig, ...customJestConfig };
     // Uncomment this to debug the new jest config
-    // console.dir(newJestConfig, { depth: null });
+    console.dir(jestConfig, { depth: null });
+    console.dir(newJestConfig, { depth: null });
     return newJestConfig;
   },
 };
